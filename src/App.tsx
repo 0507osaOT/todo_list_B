@@ -1,38 +1,11 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Todos from './components/todos/index';  // Todosコンポーネントを他のファイルからインポート
 
+function App() {                               // Appという名前のコンポーネント関数を定義
+  return (                                     // JSXを返す
+    <>                                        {/* Reactフラグメント（不要なdiv要素を避けるために使用） */}
+      <Todos/> {/* Todosコンポーネントをレンダリング */}   {/* Todosコンポーネントを表示 */}
+    </>                                       // Reactフラグメントの終了
+  );                                         // return文の終了
+}                                            // 関数の終了
 
-function App() {
-  const [count, setCount] = useState(0)
-
-
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Todo_B APP</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
-
-
-export default App
+export default App;                          // このコンポーネントを他のファイルで使用できるようにエクスポート
